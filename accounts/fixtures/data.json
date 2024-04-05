@@ -1,0 +1,66 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$j2dodjKgAHgrXPA1pZ9dwk$r/pluEaHbv70A08yyFVgCw9mCzb51VZ2TRn1Dc5loug=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-03-26T07:04:09.497Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.country",
+    "pk": 1,
+    "fields": {
+        "name": "USA"
+    }
+},
+{
+    "model": "accounts.country",
+    "pk": 2,
+    "fields": {
+        "name": "Australia"
+    }
+},
+{
+    "model": "accounts.city",
+    "pk": 1,
+    "fields": {
+        "name": "Sydney",
+        "country": 2
+    }
+},
+{
+    "model": "accounts.city",
+    "pk": 2,
+    "fields": {
+        "name": "Melbourne",
+        "country": 2
+    }
+},
+{
+    "model": "accounts.city",
+    "pk": 3,
+    "fields": {
+        "name": "San Francisco",
+        "country": 1
+    }
+},
+{
+    "model": "accounts.city",
+    "pk": 4,
+    "fields": {
+        "name": "New York",
+        "country": 1
+    }
+}
+]

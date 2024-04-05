@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <title>"Client Form"</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h4>Client Form</h4>
+    <table>
+        {{  form.as_table }}
+    </table>
+<script>
+    $(function() {
+        $("#id_country").change(function() {
+            let country_id = $(this).find(":selected").val();
+            $.ajax({
+                url: `/clients/ajax/cities_of_country/?country_id=${country_id}`,
+                method: 'get',
+                data: 'json',
+                success: function(data) {
+                    console.log(data);
+                    let options = "<option value>--------------</option>";
+                    data.forEach(function(city) {
+                        console.log(city);
+                        options += `<option value="${city[0]}">${city[1]}</option>`
+                    });
+                    $("#id_city").html(options);
+                },
+                complete: function(textStatus) {},
+            })
+        })
+    })
+</script>
+</body>
+</html>
