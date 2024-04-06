@@ -1,5 +1,7 @@
-from django.contrib import admin
 
+# import cProfile
+
+from django.contrib import admin
 from django.urls import path
 
 
@@ -12,7 +14,6 @@ class DjFormAdmin(admin.AdminSite):
         # 
         # The default ordering is alphabetical order. Without ordering,
         # the order is based on the order of definitions.
-        
         # app_dict format: {
         #     'app_label': {
         #         'name': 'app_name',
@@ -25,6 +26,11 @@ class DjFormAdmin(admin.AdminSite):
         # }
         #     note: 'app_label' will not be returned.
         #
+
+        # profiling
+        # c_prof = cProfile.Profile()
+        # c_prof.enable()
+
         app_dict = self._build_app_dict(request)
         if not app_dict:
             # when logout, the app_list can be empty
@@ -32,6 +38,12 @@ class DjFormAdmin(admin.AdminSite):
 
         # shorten the name of Django auth app
         app_dict['auth']['name'] = 'Django Auth'
+
+        # profiling# save profile data to file, then use snakeviz to view
+        # the profile data in browser (graphical mode).
+        # c_prof.disable()
+        # c_prof.dump_stats('admin.prof')
+
         return [app_dict['accounts'], app_dict['auth']]
 
     def get_urls(self):

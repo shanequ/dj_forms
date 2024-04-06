@@ -13,6 +13,10 @@ To run this project -
 4. load data `./manage.py loaddata data`
 5. run the test server `./manage.py runserver`
 
+To see some performance profiling results, uncomment
+`cProfile` lines in `djform_admin/admin.py`, view the admin
+site once, and use `snakeviz` to view the result under directory `djform_admin`:   
+> `snakeviz admin.prof`
 
 ## Use `ModelForm` and Field Dependency 
 
