@@ -139,4 +139,23 @@ django-cookie-consent  # this one seems more popular
 >     'django.contrib.auth',
 >     ...
 > ```
-3. That's all! no other changes are required.
+
+3. That's all! no other changes are required.  
+
+## Generate graphs of Django Models
+### additional Python packages
+> `pip install django-extensions`  
+> `pip install pydotplus`
+
+### Configure Django `settings`
+> ```
+>  INSTALLED_APPS = (
+>      ...
+>      'django_extensions',
+>      ...
+> )
+> ```
+
+### Generate graph of models 
+> `./manage.py graph_models -a o all_models.png`
+
